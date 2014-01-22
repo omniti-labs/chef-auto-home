@@ -23,7 +23,7 @@
 #
 # Script to automatically create home directories on demand, and mount them
 # from BASE (default /export/home)
-BASE=<%= node[:auto_home][:base] %>
+BASE=<%= @base %>
 ID=$(/bin/id $1 2>/dev/null)
 if [[ -n "$ID" ]]; then
     if [[ ! -d "$BASE/$1" ]]; then

@@ -6,6 +6,9 @@ template "/etc/auto_home" do
 	owner "root"
 	group "bin"
 	mode 0751
+        variables(
+            :base => node[:auto_home][:base]
+        )
 	notifies :restart, "service[autofs]", :immediately 
 end
 
